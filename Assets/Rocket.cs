@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+    Rigidbody rigidBody;
 
     // Use this for initialization
     void Start()
     {
-
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            print("Boosters Engaged");
+            rigidBody.AddRelativeForce(Vector3.up);
         }
         if (Input.GetKey(KeyCode.A))
         {
